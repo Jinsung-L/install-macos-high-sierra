@@ -50,7 +50,7 @@ You need another PC. I used Ubuntu. Open terminal.
 
 Clone this git repo.
 
-```git clone```
+```git clone https://github.com/Jinsung-L/install-macos-high-sierra.git```
 
 Move to the folder.
 
