@@ -1,6 +1,7 @@
-# install-macos-high-sierra
+# Install macOS High Sierra
 Solution for errors of macOS High Sierra Installation.
 This instruction is based on my personal expirience.
+[Installation stuck at "Retrying http://swcdn.apple.com/.../InstallESDDmg.pkg after 1 failure(s)"](https://discussions.apple.com/thread/8087479)
 
 ## Backgrounds
 - Upgrade from previous macOS. In my case, macOS Sierra.
@@ -147,7 +148,7 @@ Now you have to make your macbook connect to your DNS server. Since it's impossi
 
 ## Retry installation in Recovery Mode
 Now everything is setup. Restart your mac to boot in Recovery Mode if you haven't yet.
-Retry reinstall macOS. It will work fine. After the reinstallation gets done, your system will get rebooted then it will continue the installation proccess.
+Retry reinstall macOS. It will work fine. After the reinstallation gets done, your system will get rebooted then it will continue the installation process.
 
 If you see the same problem occuring at this step, check the log. Find out at which file you're stuck, download that file into your File server, close installer, restart installation again.
 
