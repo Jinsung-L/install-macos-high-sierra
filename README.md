@@ -1,12 +1,12 @@
 # Install macOS High Sierra
-Solution for errors of macOS High Sierra Installation.
-This instruction is based on my personal expirience.
+Solution for errors in macOS High Sierra installation.
+These instructions are based on my personal experience.
 [Installation stuck at "Retrying http://swcdn.apple.com/.../InstallESDDmg.pkg after 1 failure(s)"](https://discussions.apple.com/thread/8087479)
 
 ## Backgrounds
 - Upgrade from previous macOS. In my case, macOS Sierra.
 - Upgrade using **macOS High Sierra Installer** downloaded from App Store.
-- Upgrade went wrong during its progress. Black screen apeared. It tells you should diagnose or restart.
+- Upgrade went wrong during its progress. Black screen appeared. It tells you should diagnose or restart.
 
 But after you restart it...
 
@@ -20,7 +20,7 @@ But after you restart it...
 
 If your condition follows all above then follow [Downloading Stuck](#downloading-stuck)
 
-If you somehow passed above stuations, but still...
+If you somehow passed above situations, but still...
 - Requires `disk password`.
 - Your password doesn't work. Including your Account password, FileValut password, iCloud password.
 - Reset Password Mode doesn't help. All the three options are not available.
@@ -44,7 +44,7 @@ The part `InstallESDDmg.pkg` may be different but you should see the pattern
 `Retrying http://swcdn.apple.com/content/downloads/.../[filename] after # failure(s)`
 Then this instructions may help you out from the problem.
 
-Note that my solution is pretty complecated than it supposed to be considering the problem caused by a network issue. There might be some other solutions, but this is the only one that I found so far.
+Note that my solution is pretty complicated than it supposed to be considering the problem caused by a network issue. There might be some other solutions, but this is the only one that I found so far.
 
 ## Setup your environment
 You need another PC. I used Ubuntu. Open terminal.
