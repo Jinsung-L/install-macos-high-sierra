@@ -155,3 +155,6 @@ If you see the same problem occuring at this step, check the log. Find out at wh
 
 
 # Disk Password is Required
+
+You follow this: [Re: High Sierra asking for ‘disk password’ and won’t accept any](https://forums.developer.apple.com/message/242694#242694)
+with some modifications [For people who are suffering from finding Open Directory Database. or error -69569 or -69568](https://forums.developer.apple.com/message/265311#265311)
