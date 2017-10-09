@@ -20,6 +20,8 @@ But after you restart it...
 
 If your condition follows all above then follow [Downloading Stuck](#downloading-stuck)
 
+If you're experiencing only the last step, then follow [Downloading Stuck](#without-dns) except DNS part.
+
 If you somehow passed above situations, but still...
 - Requires `disk password`.
 - Your password doesn't work. Including your Account password, FileValut password, iCloud password.
@@ -46,6 +48,9 @@ Then this instructions may help you out from the problem.
 
 Note that my solution is pretty complicated than it supposed to be considering the problem caused by a network issue. There might be some other solutions, but this is the only one that I found so far.
 
+### Without DNS
+If you're on normal boot or able to boot on safe mode, you would be able to modify `/etc/hosts` file. Meaning that you're not required to run DNS server. I will mark all DNS parts with *(DNS)* symbol so that you can easily skip them.
+
 ## Setup your environment
 You need another PC. I used Ubuntu. Open terminal.
 
@@ -61,7 +66,7 @@ Install python requirements. I used python3.
 
 ```pip install -r requirements.txt```
 
-Install DNSMasq.
+Install DNSMasq. *(DNS)*
 
 ```
 sudo apt update
@@ -119,12 +124,26 @@ Once you downloaded all files you need, place them in the exact same directory a
 
 
 ## Setup your file server
-Copy the configuration file then restart DNSMasq.
+Copy the configuration file then restart DNSMasq. *(DNS)*
 
 ```
 sudo cp swcdn.apple.com.conf /etc/dnsmasq.d/
 sudo service restart dnsmasq
 ```
+
+### Modify /etc/hosts
+If you're going without DNS server, instead you need to modify the `/etc/hosts` file on your mac. At the end of the file add the following line.
+
+```
+127.0.0.1 swcdn.apple.com
+```
+
+or this if you're running your file server on other machine.
+
+```
+<YOUR FILE SERVER IP> swcdn.apple.com
+```
+
 
 Start flask server
 
@@ -142,8 +161,8 @@ md5sum AppleDiagnostics.dmg
 
 The download should've done in a second and the checksum must match with the original.
 
-## Configure your iptime
-Now you have to make your macbook connect to your DNS server. Since it's impossible to modify `/etc/hosts` or `/etc/resolv.config` in Recovery Mode, you'll have to find a way to configure your router. Change the DNS Server Setting of your router to use your DNS Server's IP address. You'll easily find a way to do this by searching from google.
+## Configure your router *(DNS)*
+Now you have to make your MacBook connect to your DNS server. Since it's impossible to modify `/etc/hosts` or `/etc/resolv.config` in Recovery Mode, you'll have to find a way to configure your router. Change the DNS Server Setting of your router to use your DNS Server's IP address. You'll easily find a way to do this by searching from google.
 
 
 ## Retry installation in Recovery Mode
