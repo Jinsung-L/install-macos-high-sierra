@@ -11,8 +11,8 @@ def download(filename):
     try:
         if len(request.args) > 0:
             raise Exception("Parameter is given.")
-
-        return send_from_directory("storage", filename)
+        _filename = str(filename).split('/')[-1] # This will get the filename
+        return send_from_directory("storage", _filename)
 
     except Exception as e:
         alt_url = MAS_URI + filename
