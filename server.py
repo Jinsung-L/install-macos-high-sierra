@@ -1,5 +1,6 @@
 from flask import Flask, request, send_from_directory, redirect, Response, stream_with_context
 import requests
+import os.path
 
 app = Flask(__name__)
 MAS_URI = "http://17.253.87.205/"
@@ -12,7 +13,9 @@ def download(filename):
         if len(request.args) > 0:
             raise Exception("Parameter is given.")
         _filename = str(filename).split('/')[-1] # This will get the filename
-        return send_from_directory("storage", _filename)
+        if os.path.exists("storage/" + _filename):
+            filename = _filename
+        return send_from_directory("storage", filename)
 
     except Exception as e:
         alt_url = MAS_URI + filename
